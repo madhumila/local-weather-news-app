@@ -1,0 +1,36 @@
+/* Navbar Styling */
+.navbar {
+  background-color: #8d1612; /* Default background color */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.navbar-brand,
+.nav-link {
+  color: white; /* Default text color */
+  font-size: 18px;
+  transition: color 0.3s; /* Smooth transition for text color */
+}
+
+.nav-link:hover {
+  color: #ffcc00; /* Text color on hover */
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+  background-color: #121212; /* Dark mode background color */
+  color: #ffffff; /* Dark mode text color */
+}
+
+.navbar.dark-mode {
+  background-color: #333333; /* Dark mode navbar background color */
+}
+
+.btn-outline-light {
+  border-color: #ffffff; /* Default border color for light button */
+  color: #ffffff; /* Default text color for light button */
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff; /* Background color on hover */
+  color: #000000; /* Text color on hover */
+}
