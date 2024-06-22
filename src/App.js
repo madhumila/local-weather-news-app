@@ -1,1 +1,19 @@
-// Your API key is: 54cd7c2ad09a49e6a53ded08b6f9565d
+import React, { useState } from "react";
+import Navbar from "./Components/News/Navbar";
+import NewsHome from "./Components/News/NewsHome";
+
+const App = () => {
+  const [query, setQuery] = useState("");
+
+  const handleSearch = (searchQuery) => {
+    setQuery(searchQuery);
+  };
+  return (
+    <div>
+      <Navbar onSearch={handleSearch} />
+      <NewsHome query={query} />
+    </div>
+  );
+};
+
+export default App;
