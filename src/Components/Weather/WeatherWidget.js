@@ -6,7 +6,7 @@ const WeatherWidget = ({ latitude, longitude }) => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const darkMode = useSelector((state) => state.mode.isDarkMode);
+  const darkMode = useSelector((state) => state.app.isDarkMode);
 
   useEffect(() => {
     const fetchWeatherData = async () => {

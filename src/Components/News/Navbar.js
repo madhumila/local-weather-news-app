@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "./Navabar.css";
 import { useDispatch, useSelector } from "react-redux";
-import { updateMode } from "../../Feature/ModeSlice";
+import { updateMode, updateNewsLanguage } from "../../Feature/NewsAppSlice";
+import languagesData from "../../language.json";
 
 const Navbar = ({ onSearch, setCategory, onModeChange }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
-  const darkMode = useSelector((state) => state.mode.isDarkMode);
-  console.log(darkMode);
+  const darkMode = useSelector((state) => state.app.isDarkMode);
+  const [selectedLanguage, setSelectedLanguage] = useState(null);
 
   useEffect(() => {
     document.body.className = darkMode ? "dark-mode" : "";
   }, [darkMode]);
+
+  const handleLanguageSelect = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedLanguage(selectedValue);
+    dispatch(updateNewsLanguage(selectedValue));
+  };
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
@@ -114,17 +121,45 @@ const Navbar = ({ onSearch, setCategory, onModeChange }) => {
                 </a>
               </li>
             </ul>
+            <div className="dropdown-container">
+              <select
+                className="dropdown-select"
+                value={selectedLanguage || ""}
+                onChange={handleLanguageSelect}
+              >
+                <option value="">Select Language</option>
+                {languagesData.languages.map((language) => (
+                  <option key={language.iso_code} value={language.iso_code}>
+                    {language.name}
+                  </option>
+                ))}
+              </select>
+            </div>
             <form className="d-flex" role="search" onSubmit={handleFormSubmit}>
               <input
-                className="form-control me-2"
+                className="form-control"
                 type="search"
                 placeholder="Type something.."
                 aria-label="Search"
                 value={searchTerm}
                 onChange={handleInputChange}
-                style={{ width: "180px" }}
+                style={{
+                  width: "180px",
+                  borderTopRightRadius: "0",
+                  borderBottomRightRadius: "0",
+                  borderTopLeftRadius: "0.25rem",
+                  borderBottomLeftRadius: "0.25rem",
+                  border: "none",
+                }}
               />
-              <button className="btn btn-custom-search" type="submit">
+              <button
+                className="btn-custom-search"
+                style={{
+                  borderTopLefttRadius: "0",
+                  borderBottomLefttRadius: "0",
+                }}
+                type="submit"
+              >
                 Search
               </button>
             </form>

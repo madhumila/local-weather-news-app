@@ -1,0 +1,92 @@
+{
+  "languages": [
+    {
+      "name": "Arabic",
+      "iso_code": "ar"
+    },
+    {
+      "name": "Chinese",
+      "iso_code": "zh"
+    },
+    {
+      "name": "Dutch",
+      "iso_code": "nl"
+    },
+    {
+      "name": "English",
+      "iso_code": "en"
+    },
+    {
+      "name": "French",
+      "iso_code": "fr"
+    },
+    {
+      "name": "German",
+      "iso_code": "de"
+    },
+    {
+      "name": "Greek",
+      "iso_code": "el"
+    },
+    {
+      "name": "Hebrew",
+      "iso_code": "he"
+    },
+    {
+      "name": "Hindi",
+      "iso_code": "hi"
+    },
+    {
+      "name": "Italian",
+      "iso_code": "it"
+    },
+    {
+      "name": "Japanese",
+      "iso_code": "ja"
+    },
+    {
+      "name": "Malayalam",
+      "iso_code": "ml"
+    },
+    {
+      "name": "Marathi",
+      "iso_code": "mr"
+    },
+    {
+      "name": "Norwegian",
+      "iso_code": "no"
+    },
+    {
+      "name": "Portuguese",
+      "iso_code": "pt"
+    },
+    {
+      "name": "Romanian",
+      "iso_code": "ro"
+    },
+    {
+      "name": "Russian",
+      "iso_code": "ru"
+    },
+    {
+      "name": "Spanish",
+      "iso_code": "es"
+    },
+    {
+      "name": "Swedish",
+      "iso_code": "sv"
+    },
+    {
+      "name": "Tamil",
+      "iso_code": "ta"
+    },
+    {
+      "name": "Telugu",
+      "iso_code": "te"
+    },
+    {
+      "name": "Ukrainian",
+      "iso_code": "uk"
+    }
+  ]
+}

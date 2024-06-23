@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import modeReducer from "./ModeSlice";
+import newsAppReducer from "./NewsAppSlice";
 
 export const store = configureStore({
   reducer: {
-    mode: modeReducer,
+    app: newsAppReducer,
   },
 });

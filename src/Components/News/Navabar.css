@@ -5,7 +5,7 @@
 
 .nav-link {
   color: white;
-  font-size: 18px;
+  font-size: 14px;
   transition: color 0.3s;
 }
 .navbar-brand {
@@ -45,7 +45,10 @@ body.dark-mode {
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+
   transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -56,4 +59,45 @@ body.dark-mode {
 
 .btn-custom-search:active {
   background-color: #e54e3c;
+}
+
+.dropdown-container {
+  position: relative;
+  width: 150px;
+}
+
+.dropdown-select::-webkit-scrollbar {
+  display: none;
+}
+
+.dropdown-select {
+  width: 90%;
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+  background-color: #c8c8c8;
+  color: #000;
+  font-size: 16px;
+  font-weight: 200;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.dropdown-select:focus {
+  outline: none;
+}
+
+.dropdown-select::-ms-expand {
+  display: none;
+}
+
+.dropdown-select option {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.dropdown-select option:hover {
+  background-color: #f4f4f4;
 }

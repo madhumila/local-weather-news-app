@@ -3,10 +3,10 @@ import { useSelector } from "react-redux";
 import NewsImage from "./../../Assets/NewsImage.png";
 import "./NewsItems.css";
 
-const NewsItem = ({ title, description, src, url }) => {
+const NewsItem = ({ source, publishedAt, title, description, src, url }) => {
   // Conditionally set the class name based on the mode value
 
-  const darkMode = useSelector((state) => state.mode.isDarkMode);
+  const darkMode = useSelector((state) => state.app.isDarkMode);
   const cardClassName = darkMode
     ? "card bg-dark text-light"
     : "card bg-light text-dark";
@@ -27,7 +27,28 @@ const NewsItem = ({ title, description, src, url }) => {
         className="card-img-top"
         alt=""
       />
-      <div className="card-body d-flex flex-column" style={{ height: "60%" }}>
+      <small
+        style={{
+          fontSize: "12px",
+          fontFamily: "Noto Sans Malayalam",
+          fontWeight: "600",
+          color: "gray",
+        }}
+      >
+        {publishedAt.split("T")[0]}
+      </small>
+      <small> | </small>
+      <small
+        style={{
+          fontSize: "12px",
+          fontFamily: "Noto Sans Malayalam",
+          fontWeight: "800",
+          color: "red",
+        }}
+      >
+        {source}
+      </small>
+      <div className="card-body d-flex flex-column" style={{ height: "55%" }}>
         <div
           className="card-title"
           style={{
