@@ -115,12 +115,12 @@ const Navbar = ({ onSearch, setCategory, onModeChange }) => {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Type something.."
                 aria-label="Search"
                 value={searchTerm}
                 onChange={handleInputChange}
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-custom-search" type="submit">
                 Search
               </button>
             </form>

@@ -1,4 +1,5 @@
 import React from "react";
+// import image from ".../Assets/NewsImage"
 
 const NewsItem = ({ title, description, src, url, mode }) => {
   // Conditionally set the class name based on the mode value
@@ -9,7 +10,7 @@ const NewsItem = ({ title, description, src, url, mode }) => {
   return (
     <div
       className={`${cardClassName} mb-3 d-inline-block my-3 mx-3 px-2 py-2`}
-      style={{ width: "345px", height: "500px" }}
+      style={{ width: "300px", height: "500px" }}
     >
       <img
         src={src}

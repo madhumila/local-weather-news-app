@@ -1,36 +1,53 @@
 /* Navbar Styling */
 .navbar {
-  background-color: #8d1612; /* Default background color */
-  transition: background-color 0.3s; /* Smooth transition for background color */
+  background-color: #8d1612;
+  transition: background-color 0.3s;
 }
 
 .navbar-brand,
 .nav-link {
-  color: white; /* Default text color */
+  color: white;
   font-size: 18px;
-  transition: color 0.3s; /* Smooth transition for text color */
+  transition: color 0.3s;
 }
 
 .nav-link:hover {
-  color: #ffcc00; /* Text color on hover */
+  color: #ffcc00;
 }
 
 /* Dark Mode Styling */
 body.dark-mode {
-  background-color: #121212; /* Dark mode background color */
-  color: #ffffff; /* Dark mode text color */
+  background-color: #121212;
+  color: #ffffff;
 }
 
 .navbar.dark-mode {
-  background-color: #333333; /* Dark mode navbar background color */
+  background-color: #333333;
 }
 
 .btn-outline-light {
-  border-color: #ffffff; /* Default border color for light button */
-  color: #ffffff; /* Default text color for light button */
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 .btn-outline-light:hover {
-  background-color: #ffffff; /* Background color on hover */
-  color: #000000; /* Text color on hover */
+  background-color: #ffffff;
+  color: #000000;
+}
+.btn-custom-search {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-custom-search:hover {
+  background-color: #ff4f41;
+  transform: scale(1.05);
+}
+
+.btn-custom-search:active {
+  background-color: #e54e3c;
 }
