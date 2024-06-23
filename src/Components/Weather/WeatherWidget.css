@@ -1,0 +1,14 @@
+@keyframes fadeInScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.temperature-animation {
+  animation: fadeInScaleUp 1s ease-in-out;
+}

@@ -4,12 +4,11 @@ import { useSelector } from "react-redux";
 
 const NewsItem = ({ title, description, src, url }) => {
   // Conditionally set the class name based on the mode value
- 
-    const darkMode = useSelector((state) => state.mode.isDarkMode) 
-    const cardClassName = darkMode
+
+  const darkMode = useSelector((state) => state.mode.isDarkMode);
+  const cardClassName = darkMode
     ? "card bg-dark text-light"
     : "card bg-light text-dark";
-
 
   return (
     <div
@@ -22,7 +21,10 @@ const NewsItem = ({ title, description, src, url }) => {
         className="card-img-top"
         alt=""
       />
-      <div className="card-body mb-0 d-flex flex-column justify-content-space-between " style={{height: "auto"}}>
+      <div
+        className="card-body mb-0 d-flex flex-column justify-content-space-between "
+        style={{ height: "auto" }}
+      >
         <div
           className="card-title"
           style={{

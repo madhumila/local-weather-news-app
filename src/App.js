@@ -47,7 +47,9 @@ const App = () => {
           </div>
           <div className="weather-container">
             <h2 className="text-center">
-              <span className="badge bg-danger">Weather</span>
+              <span className="badge bg-danger" style={{ marginTop: "20px" }}>
+                Weather
+              </span>
             </h2>
             <WeatherWidget latitude={latitude} longitude={longitude} />
           </div>

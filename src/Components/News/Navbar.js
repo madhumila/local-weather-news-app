@@ -34,7 +34,7 @@ const Navbar = ({ onSearch, setCategory, onModeChange }) => {
       >
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            News Mag
+            News feed
           </a>
           <button
             className="navbar-toggler"
