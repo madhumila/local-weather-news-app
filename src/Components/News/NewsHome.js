@@ -11,7 +11,9 @@ const NewsHome = ({ query, category, mode }) => {
   // Fetch news articles when category or query changes
 
   useEffect(() => {
-    const apiKey = "101f1a09f1b3c0ab1a1388e8b23e83a6";
+    // const apiKey = "101f1a09f1b3c0ab1a1388e8b23e83a6";
+    const apiKey = process.env.REACT_APP_NEWS_API_KEY;
+    
     const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=ml&country=in&max=30&apikey=${apiKey}&q=${query}`;
 
     const fetchNews = async () => {

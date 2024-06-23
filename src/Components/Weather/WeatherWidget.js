@@ -11,7 +11,7 @@ const WeatherWidget = ({ latitude, longitude }) => {
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        const apiKey = "f26245c680ec76ce301fc4ccf54ca94c";
+        const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
         const weatherResponse = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`
         );
