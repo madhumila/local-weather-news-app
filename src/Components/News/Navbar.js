@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Navabar.css";
+import { useDispatch, useSelector } from "react-redux";
+import { updateMode } from "../../Feature/ModeSlice";
 
 const Navbar = ({ onSearch, setCategory, onModeChange }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [darkMode, setDarkMode] = useState(false);
+  const dispatch = useDispatch();
+  const darkMode = useSelector((state) => state.mode.isDarkMode);
+  console.log(darkMode);
 
   useEffect(() => {
     document.body.className = darkMode ? "dark-mode" : "";
@@ -15,8 +19,7 @@ const Navbar = ({ onSearch, setCategory, onModeChange }) => {
 
   // Handler function for toggling dark mode
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    onModeChange(darkMode); // Passing the opposite of the current darkMode state
+    dispatch(updateMode(!darkMode));
   };
 
   const handleFormSubmit = (e) => {

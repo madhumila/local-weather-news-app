@@ -37,8 +37,8 @@ const WeatherWidget = ({ latitude, longitude, mode }) => {
   };
 
   return (
-    <div className="d-flex justify-content-end py-20">
-      <div style={{ marginLeft: "auto" }}>
+    <div className="d-flex">
+      <div style={{ margin: "auto" }}>
         <div className="card text-body" style={cardStyle}>
           <div className="card-body p-4">
             <div className="d-flex">
