@@ -122,6 +122,7 @@ const Navbar = ({ onSearch, setCategory, onModeChange }) => {
                 aria-label="Search"
                 value={searchTerm}
                 onChange={handleInputChange}
+                style={{ width: "180px" }}
               />
               <button className="btn btn-custom-search" type="submit">
                 Search

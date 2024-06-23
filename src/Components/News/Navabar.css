@@ -3,17 +3,19 @@
   transition: background-color 0.3s;
 }
 
-
 .nav-link {
   color: white;
   font-size: 18px;
   transition: color 0.3s;
 }
-.navbar-brand{
+.navbar-brand {
   color: rgb(229, 229, 226);
   font-size: 26px;
   transition: color 0.3s;
   font-weight: 600;
+}
+.navbar-brand:hover {
+  color: #ffcc00;
 }
 .nav-link:hover {
   color: #ffcc00;

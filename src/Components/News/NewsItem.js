@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-// import image from ".../Assets/NewsImage"
+import NewsImage from "./../../Assets/NewsImage.png";
+import "./NewsItems.css";
 
 const NewsItem = ({ title, description, src, url }) => {
   // Conditionally set the class name based on the mode value
@@ -12,23 +13,27 @@ const NewsItem = ({ title, description, src, url }) => {
 
   return (
     <div
-      className={`${cardClassName} mb-3 d-inline-block my-3 mx-3 px-2 py-2`}
-      style={{ width: "250px", height: "400px" }}
+      className={`${cardClassName} mb-3 d-inline-block my-3 mx-3 px-2 py-2 news-card`}
+      style={{
+        width: "250px",
+        height: "400px",
+        boxShadow:
+          "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+      }}
     >
       <img
-        src={src}
+        src={src ? src : NewsImage}
         style={{ height: "150px", objectFit: "cover" }}
         className="card-img-top"
         alt=""
       />
-      <div
-        className="card-body mb-0 d-flex flex-column justify-content-space-between "
-        style={{ height: "auto" }}
-      >
+      <div className="card-body d-flex flex-column" style={{ height: "60%" }}>
         <div
           className="card-title"
           style={{
-            fontSize: "15px",
+            fontSize: "14px",
+            fontFamily: "Noto Sans Malayalam",
+            fontWeight: 700,
             flex: "0 0 auto",
             overflow: "hidden",
             textOverflow: "ellipsis",
@@ -39,15 +44,21 @@ const NewsItem = ({ title, description, src, url }) => {
         <p
           className="card-text flex-grow-1"
           style={{
-            fontSize: "12px",
+            fontSize: "10px",
+            fontFamily: "Noto Sans Malayalam",
+            fontWeight: 400,
             maxHeight: "70px",
             overflow: "hidden",
             textOverflow: "ellipsis",
           }}
         >
-          {description ? description.slice(0, 50) + "..." : title}
+          {description ? description.slice(0, 90) + "..." : title}
         </p>
-        <a href={url} className="btn btn-primary mt-auto">
+        <a
+          href={url}
+          className="btn btn-primary mt-auto"
+          style={{ marginTop: "auto" }}
+        >
           Read more
         </a>
       </div>
