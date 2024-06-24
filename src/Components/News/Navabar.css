@@ -48,6 +48,7 @@ body.dark-mode {
   /* border-radius: 0.25rem; */
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
+  margin-right: 0.5rem;
 
   transition: background-color 0.3s, transform 0.3s;
 }
@@ -100,4 +101,24 @@ body.dark-mode {
 
 .dropdown-select option:hover {
   background-color: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+  .dropdown-container {
+    margin-bottom: 5px;
+  }
+
+  .toggle-button {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 900px) {
+  .dropdown-container {
+    margin-bottom: 5px;
+  }
+
+  .toggle-button {
+    margin-top: 5px;
+  }
 }

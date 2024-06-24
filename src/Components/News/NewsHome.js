@@ -7,11 +7,12 @@ import "./NewsHome.css";
 const NewsHome = ({ query, category, mode }) => {
   const [newsArticles, setNewsArticles] = useState([]);
   const [currentPages, setCurrentPages] = useState(0);
+  const [isSortedDescending, setIsSortedDescending] = useState(false);
   const itemsPerPage = 6;
-  const selectedLanguage = useSelector((state) => state.app.newsLanguage);
+  const selectedLanguage =
+    useSelector((state) => state.app.newsLanguage) || "ta";
 
   // Fetch news articles when category or query changes
-
   useEffect(() => {
     const apiKey = process.env.REACT_APP_NEWS_API_KEY;
     const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=${selectedLanguage}&max=30&apikey=${apiKey}&q=${query}`;
@@ -29,6 +30,17 @@ const NewsHome = ({ query, category, mode }) => {
     fetchNews();
   }, [category, query, selectedLanguage]);
 
+  // Function to handle sorting
+  const handleSort = () => {
+    const sortedArticles = [...newsArticles].sort((a, b) => {
+      return isSortedDescending
+        ? new Date(b.publishedAt) - new Date(a.publishedAt)
+        : new Date(a.publishedAt) - new Date(b.publishedAt);
+    });
+    setNewsArticles(sortedArticles);
+    setIsSortedDescending(!isSortedDescending);
+  };
+
   const paginatedData =
     newsArticles &&
     newsArticles.slice(
@@ -42,11 +54,26 @@ const NewsHome = ({ query, category, mode }) => {
 
   return (
     <div>
-      <h2 className="text-center">
-        <span className="badge bg-danger" style={{ marginTop: "20px" }}>
-          News
-        </span>
-      </h2>
+      <div className="sub-header">
+        <button
+          onClick={handleSort}
+          className="sort-button"
+          style={{ marginTop: "20px" }}
+        >
+          Sort By Date
+          {isSortedDescending ? (
+            <i class="bi bi-sort-up"></i>
+          ) : (
+            <i class="bi bi-sort-down"></i>
+          )}
+        </button>
+        <h2 className="text-center">
+          <span className="badge bg-danger" style={{ marginTop: "20px" }}>
+            News
+          </span>
+        </h2>
+      </div>
+
       {paginatedData &&
         paginatedData.map((news, index) => {
           return (

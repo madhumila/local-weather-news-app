@@ -8,7 +8,7 @@ const Navbar = ({ onSearch, setCategory, onModeChange }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.app.isDarkMode);
-  const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const [selectedLanguage, setSelectedLanguage] = useState("ta");
 
   useEffect(() => {
     document.body.className = darkMode ? "dark-mode" : "";
@@ -58,7 +58,7 @@ const Navbar = ({ onSearch, setCategory, onModeChange }) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <a
-                  className="nav-link active"
+                  className="nav-link"
                   aria-current="page"
                   href="#"
                   onClick={() => setCategory("general")}
@@ -164,7 +164,7 @@ const Navbar = ({ onSearch, setCategory, onModeChange }) => {
               </button>
             </form>
             <button
-              className="btn btn-outline-light ms-3"
+              className="btn btn-outline-light toggle-button"
               onClick={toggleDarkMode}
             >
               {darkMode ? "Light Mode" : "Dark Mode"}
