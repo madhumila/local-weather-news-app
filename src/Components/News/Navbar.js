@@ -8,7 +8,7 @@ const Navbar = ({ onSearch, setCategory, onModeChange }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.app.isDarkMode);
-  const [selectedLanguage, setSelectedLanguage] = useState("ta");
+  const [selectedLanguage, setSelectedLanguage] = useState("ml");
 
   useEffect(() => {
     document.body.className = darkMode ? "dark-mode" : "";

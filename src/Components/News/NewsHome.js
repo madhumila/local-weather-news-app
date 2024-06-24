@@ -10,7 +10,9 @@ const NewsHome = ({ query, category, mode }) => {
   const [isSortedDescending, setIsSortedDescending] = useState(false);
   const itemsPerPage = 6;
   const selectedLanguage =
-    useSelector((state) => state.app.newsLanguage) || "ta";
+    useSelector((state) => state.app.newsLanguage) || "ml";
+
+  const darkMode = useSelector((state) => state.app.isDarkMode);
 
   // Fetch news articles when category or query changes
   useEffect(() => {
@@ -58,7 +60,7 @@ const NewsHome = ({ query, category, mode }) => {
         <button
           onClick={handleSort}
           className="sort-button"
-          style={{ marginTop: "20px" }}
+          style={{ marginTop: "15px", color: darkMode ? "#fff" : "#000" }}
         >
           Sort By Date
           {isSortedDescending ? (
@@ -68,7 +70,7 @@ const NewsHome = ({ query, category, mode }) => {
           )}
         </button>
         <h2 className="text-center">
-          <span className="badge bg-danger" style={{ marginTop: "20px" }}>
+          <span className="badge bg-danger" style={{ marginTop: "15px" }}>
             News
           </span>
         </h2>

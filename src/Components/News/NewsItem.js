@@ -13,7 +13,7 @@ const NewsItem = ({ source, publishedAt, title, description, src, url }) => {
 
   return (
     <div
-      className={`${cardClassName} mb-3 d-inline-block my-3 mx-3 px-2 py-2 news-card`}
+      className={`${cardClassName} d-inline-block my-3 mx-3 news-card`}
       style={{
         width: "250px",
         height: "400px",
@@ -48,7 +48,7 @@ const NewsItem = ({ source, publishedAt, title, description, src, url }) => {
       >
         {source}
       </small>
-      <div className="card-body d-flex flex-column" style={{ height: "55%" }}>
+      <div className="card-body d-flex flex-column" style={{ height: "50%" }}>
         <div
           className="card-title"
           style={{
