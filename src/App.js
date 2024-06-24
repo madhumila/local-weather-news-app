@@ -3,10 +3,12 @@ import Navbar from "./Components/News/Navbar";
 import NewsHome from "./Components/News/NewsHome";
 import WeatherWidget from "./Components/Weather/WeatherWidget";
 import "./App.css";
+import LoadingSpinner from "./Components/News/LoadingSpinner";
 
 const App = () => {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("general");
+  const [isLoading, setIsLoading] = useState(true);
 
   // Handler function for search
   const handleSearch = (searchQuery) => {
@@ -35,11 +37,18 @@ const App = () => {
     };
 
     fetchUserGeolocation();
-  }, []);
 
+    const fetchData = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, []);
   return (
     <div className="app-container">
       <Navbar onSearch={handleSearch} setCategory={handleCategoryChange} />
+      {isLoading && <LoadingSpinner />}
       <div className="container">
         <div className="main-container" style={{ margin: "auto" }}>
           <div className="news-home">
