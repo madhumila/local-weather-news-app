@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/local-weather-news-app/static/css/main.50a819b1.css",
+    "main.js": "/local-weather-news-app/static/js/main.2d57026e.js",
+    "static/js/453.53d3e5e3.chunk.js": "/local-weather-news-app/static/js/453.53d3e5e3.chunk.js",
+    "static/media/NewsImage.png": "/local-weather-news-app/static/media/NewsImage.85081a396cadce258cf6.png",
+    "index.html": "/local-weather-news-app/index.html",
+    "main.50a819b1.css.map": "/local-weather-news-app/static/css/main.50a819b1.css.map",
+    "main.2d57026e.js.map": "/local-weather-news-app/static/js/main.2d57026e.js.map",
+    "453.53d3e5e3.chunk.js.map": "/local-weather-news-app/static/js/453.53d3e5e3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50a819b1.css",
+    "static/js/main.2d57026e.js"
+  ]
+}
